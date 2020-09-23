@@ -1,4 +1,5 @@
-import {STORE_MANAGER,SHOW_NOT_ASSIGNED_MANAGERS,UPDATE_MANAGER, FETCH_MANAGERS} from '../actionConstants/adminConstants'
+import {STORE_MANAGER,SHOW_NOT_ASSIGNED_MANAGERS,UPDATE_MANAGER,
+     FETCH_MANAGERS,FETCH_TECHNICIANS} from '../actionConstants/adminConstants'
 
 const initialState = {
     response:{
@@ -8,7 +9,9 @@ const initialState = {
     loading:true,
     managersNotAssignedDistrict:[],
     managers:[],
-    managersLoading:true
+    managersLoading:true,
+    technicians:[],
+    techniciansLoading:true
 }
 
 export default function(state=initialState,action){
@@ -36,6 +39,13 @@ export default function(state=initialState,action){
                 return {
                     ...state,
                     response:action.payload
+                }
+
+                case FETCH_TECHNICIANS:
+                return {
+                    ...state,
+                    technicians:action.payload,
+                    techniciansLoading:false
                 }
             default:
                 return state

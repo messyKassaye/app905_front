@@ -1,4 +1,3 @@
-import { connect } from "react-redux"
 
 export const FETCHFAULTTYPE = 'FETCHFAULTTYPE'
 export const STOREFAULTTPE = 'STOREFAULTTPE'
@@ -13,3 +12,4 @@ export const UPDATE_MANAGER = 'UPDATE_MANAGER'
 export const FETCH_REGION_WOREDA ='FETCH_REGION_WOREDA'
 export const STORE_AREA = 'STORE_REGION_WOREDA'
 export const UPDATE_DISTRICT = 'UPDATE_DISTRICT'
+export const FETCH_TECHNICIANS = 'FETCH_TECHNICIANS'

@@ -25,6 +25,7 @@ import {me} from '../state/actions/usersActions'
 import {connect} from 'react-redux'
 import orange from '@material-ui/core/colors/orange'
 import LogoComponent from '../commons/LogoComponent'
+import {fetchFaultTypes} from './state/action/faultTypeAction'
 class DistrictManagerDashboard extends React.Component{
     constructor(props) {
         super(props)
@@ -145,7 +146,9 @@ class DistrictManagerDashboard extends React.Component{
 
 const mapStateToProps = state=>({
     user:state.userData.user,
-    loading:state.userData.loading
+    loading:state.userData.loading,
+    fetchLoading:state.authReducer.districtManagersReducer.managerFaultTypes.loading,
+    faultTypes:state.authReducer.districtManagersReducer.faultTypes
 })
 
-export default connect(mapStateToProps,{me})(withStyles(authStyle)(DistrictManagerDashboard));
+export default connect(mapStateToProps,{me,fetchFaultTypes})(withStyles(authStyle)(DistrictManagerDashboard));

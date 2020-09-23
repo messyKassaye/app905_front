@@ -4,7 +4,7 @@ import SettingIcon from '@material-ui/icons/Settings'
 import VideocamIcon from '@material-ui/icons/Videocam'
 import AttachMoneyIcon from '@material-ui/icons/AttachMoney'
 import MusicNotIcon from '@material-ui/icons/MusicNote'
-import PersonIcon from '@material-ui/icons/Person';
+import PeopleIcon from '@material-ui/icons/People';
 import ExtensionIcon from '@material-ui/icons/Extension';
 import BusinessIcon from '@material-ui/icons/Business'
 import PlaceIcon from '@material-ui/icons/Place';
@@ -22,10 +22,16 @@ const districtManagerMenu = [
         route:'/auth/districtManager/accidents',
         icon:<WarningIcon/>
     },
+
     {
-        name:'groups',
+        name:'Technicians',
+        route:'/auth/districtManager/technicians',
+        icon:<PeopleIcon/>
+    },
+    {
+        name:'Groups',
         route:'/auth/districtManager/groups',
-        icon:<PersonIcon/>
+        icon:<GroupWorkIcon/>
     },
 
     {

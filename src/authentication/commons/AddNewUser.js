@@ -16,7 +16,7 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import {showMainDialog} from "../../authentication/admin/state/actions/dialogAction";
 import {green} from "@material-ui/core/colors";
-import {storeManager} from '../admin/state/actions/managersAction'
+import {storeManager,storeTechnician} from '../admin/state/actions/managersAction'
 
 class AddNewUser extends Component {
     constructor(props) {
@@ -49,12 +49,22 @@ class AddNewUser extends Component {
     }
     handleSubmit = event=>{
         event.preventDefault()
-        this.setState({
-            submitted:true,
-            loading:true
-        })
-        const {formData} = this.state
-        this.props.storeManager(formData)
+        if(this.props.role===null){
+            this.setState({
+                submitted:true,
+                loading:true
+            })
+            const {formData} = this.state
+            this.props.storeManager(formData)
+        }else{
+            this.setState({
+                submitted:true,
+                loading:true
+            })
+            const {formData} = this.state
+            this.props.storeTechnician(formData)
+        }
+        
 
     }
 
@@ -183,4 +193,4 @@ const mapSteteToProps = state=>({
     response:state.authReducer.adminReducer.managerReducers.response
 })
 
-export default connect(mapSteteToProps,{showMainDialog,storeManager})(withStyles(signup)(AddNewUser));
+export default connect(mapSteteToProps,{showMainDialog,storeManager,storeTechnician})(withStyles(signup)(AddNewUser));

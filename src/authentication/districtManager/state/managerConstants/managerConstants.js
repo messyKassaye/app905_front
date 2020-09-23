@@ -1,0 +1,4 @@
+export const FETCH_FAULT_TYPES = 'FETCH_FAULT_TYPES'
+export const STORE_GROUPS = 'STORE_GROUPS'
+export const FETCH_GROUPS = 'FETCH_GROUPS'
+export const SHOW_GROUPS = 'SHOW_GROUPS'
