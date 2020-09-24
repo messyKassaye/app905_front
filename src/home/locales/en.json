@@ -1,0 +1,14 @@
+{
+  "en": {
+    "accident_type":"Select accident type",
+    "first_text":"This is another alternative of",
+    "second_text":"call. We will deliver your message to your district directly",
+    "start_using":"Start using ",
+    "select_region":"Select your region",
+    "select_sub_city":"Select sub city or zone",
+    "select_woreda":"Select woreda",
+    "specific_name":"Enter Specific name",
+    "phone_number":"Tell us your phone number",
+    "send_accident":"Send accident"
+  }
+}

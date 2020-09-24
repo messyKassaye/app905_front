@@ -17,12 +17,7 @@ const districtManagerMenu = [
         route:'/auth',
         icon:<DashboardIcon/>
     },
-    {
-        name:'Accidents',
-        route:'/auth/districtManager/accidents',
-        icon:<WarningIcon/>
-    },
-
+    
     {
         name:'Technicians',
         route:'/auth/districtManager/technicians',
@@ -32,6 +27,11 @@ const districtManagerMenu = [
         name:'Groups',
         route:'/auth/districtManager/groups',
         icon:<GroupWorkIcon/>
+    },
+    {
+        name:'Accidents',
+        route:'/auth/districtManager/accidents',
+        icon:<WarningIcon/>
     },
 
     {

@@ -10,6 +10,8 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator'
 import {fetchRegions} from './state/actions/RegionSubcityZoneWoredaAction'
 import LoadingButton from '../authentication/commons/LoadingButton'
+import {translate} from "react-i18next";
+
 class AccidentsPage extends React.Component{
 
     constructor(props){
@@ -164,7 +166,7 @@ class AccidentsPage extends React.Component{
         }
     }
     render(){
-        const {classes} = this.props
+        const {classes,t} = this.props
         const {formData} = this.state
         const { loading } = this.state;
         const finished = false
@@ -230,12 +232,12 @@ class AccidentsPage extends React.Component{
                                                     <Grid container spacing={2}>
                                                     <Grid item md={12} xs={12} sm={12}>
                                                         <Typography>
-                                                            This is another alternative of
+                                                             {t('home.first_text')}
                                                              <span className={classes.span}>905</span> 
-                                                             call. We will deliver your message to your district directly
+                                                             {t('home.second_text')}
                                                         </Typography>
                                                         <Typography className={classes.start_using}>
-                                                            Start using <span>App905</span>
+                                                            {t('home.start_using')}<span>App905</span>
                                                         </Typography>
             
                                                         <ValidatorForm
@@ -244,7 +246,7 @@ class AccidentsPage extends React.Component{
             
                                                             <FormControl className={classes.text_input}>
                                                                 <InputLabel
-                                                                >{'Select accident type'}</InputLabel>
+                                                                >{t('home.accident_type')}</InputLabel>
                                                                 <Select
                                                                     name='fault_type_id'
                                                                     value={this.state.priority}
@@ -268,7 +270,7 @@ class AccidentsPage extends React.Component{
                                                                     (
                                                                         <FormControl className={classes.text_input}>
                                                                         <InputLabel
-                                                                        >{'Select  region'}</InputLabel>
+                                                                        >{t('home.select_region')}</InputLabel>
                                                                         <Select
                                                                             name='region_id'
                                                                             value={this.state.region}
@@ -296,7 +298,7 @@ class AccidentsPage extends React.Component{
                                                                     (
                                                                         <FormControl className={classes.text_input}>
                                                                         <InputLabel
-                                                                        >{'Select sub city or zone'}</InputLabel>
+                                                                        >{t('home.select_sub_city')}</InputLabel>
                                                                         <Select
                                                                             name='sub_city_zone_id'
                                                                             value={this.state.subcity}
@@ -324,7 +326,7 @@ class AccidentsPage extends React.Component{
                                                                     (
                                                                         <FormControl className={classes.text_input}>
                                                                         <InputLabel
-                                                                        >{'Select woreda'}</InputLabel>
+                                                                        >{t('home.select_woreda')}</InputLabel>
                                                                         <Select
                                                                             name='woreda_city_id'
                                                                             value={this.state.woreda}
@@ -353,7 +355,7 @@ class AccidentsPage extends React.Component{
                                                                         <div>
                                                                             <TextValidator
                                                                             className={classes.text_input}
-                                                                            label={'Enter Specific name'}
+                                                                            label={t('home.specific_name')}
                                                                             onChange={this.handleChange}
                                                                             name="specific_name"
                                                                             value={this.state.formData.specific_name}
@@ -363,7 +365,7 @@ class AccidentsPage extends React.Component{
             
                                                                          <TextValidator
                                                                             className={classes.text_input}
-                                                                            label={'Tell us your phone number'}
+                                                                            label={t('home.phone_number')}
                                                                             onChange={this.handleChange}
                                                                             name="sender_phone"
                                                                             value={this.state.formData.sender_phone}
@@ -378,11 +380,11 @@ class AccidentsPage extends React.Component{
                                                                                 type="submit"
                                                                                 loading={setLoading}
                                                                                 done={finished}
-                                                                                text={'Send accident'}
+                                                                                text={t('home.send_accident')}
                                                                                 disabled={!isEnabled ||this.state.submitted}
                                                                             >
                                                                                 {
-                                                                                    'Send accident'
+                                                                                    t('home.send_accident')
                                                                                 }
                                                                             </LoadingButton>
                                                                         </div>
@@ -413,5 +415,6 @@ const mapStateToProps = state=>({
     response:state.homeReducer.accidentsReducer.response
 
 })
-export default connect(mapStateToProps,{fetchAccidentTypes,fetchRegions,sendAccident})
-(withStyles(homeStyle)(AccidentsPage))
+export default translate('common')
+(connect(mapStateToProps,{fetchAccidentTypes,fetchRegions,sendAccident})
+(withStyles(homeStyle)(AccidentsPage)))

@@ -1,4 +1,5 @@
-import {FETCH_GROUPS, STORE_GROUPS,SHOW_GROUPS} from '../managerConstants/managerConstants'
+import {FETCH_GROUPS, STORE_GROUPS,SHOW_GROUPS,UPDATE_GROUP}
+ from '../managerConstants/managerConstants'
 import axios from 'axios'
 import { API_URL } from '../../../../constants/constants'
 const PATH = 'groups'
@@ -25,6 +26,15 @@ export const showGroup = (type)=>dispatch=>{
     .then(response=>response.data)
     .then(res=>dispatch({
         type:SHOW_GROUPS,
+        payload:res
+    }))
+}
+
+export const updateGroup = (data,id)=>dispatch=>{
+    axios.put(`${API_URL}${PATH}/${id}`,data)
+    .then(response=>response.data)
+    .then(res=>dispatch({
+        type:UPDATE_GROUP,
         payload:res
     }))
 }

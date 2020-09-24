@@ -1,0 +1,14 @@
+{
+  "am": {
+    "accident_type":"የአደጋው አይነት ይመረጡ",
+    "first_text":"ይህ መተገበሪያ የ",
+    "second_text":"ሌላኛው አገልግሎት መስጫ ነው። በአካባቢዎ የደረሱ የመብራት አደጋዎችን ወደ ሚመለከተው አካል በፍጥነት እናደርስለዎታለን",
+    "start_using":"ይጠቀሙ ",
+    "select_region":"ክልልዎን ይምረጡ",
+    "select_sub_city":"ክፍለ ከተማዎን ወይም ዞንዎን ይምረጡ",
+    "select_woreda":"ወረዳዎን ይምረጡ",
+    "specific_name":"ልዩ ቦታውን ያስገቡ",
+    "phone_number":"ስልክ ቁጥርዎን ያስገቡ",
+    "send_accident":"አደጋውን ላክ"
+  }
+}

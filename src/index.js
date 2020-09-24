@@ -10,13 +10,17 @@ import {CssBaseline} from "@material-ui/core";
 import {Provider} from "react-redux";
 import store from "./store";
 import Interceptor from "./interceptors/Interceptor";
+import i18n from './i18n'
+
 ReactDOM.render(
     <Provider store={store}>
         <MuiThemeProvider theme={theme}>
+                <I18nextProvider i18n={i18n}>
                 <CssBaseline>
                     <Interceptor/>
                     <App/>
                 </CssBaseline>
+                </I18nextProvider>
         </MuiThemeProvider>
     </Provider>
     , document.getElementById('root'));

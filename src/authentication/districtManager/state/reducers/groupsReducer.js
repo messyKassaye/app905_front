@@ -1,4 +1,4 @@
-import {FETCH_GROUPS, STORE_GROUPS,SHOW_GROUPS} from '../managerConstants/managerConstants'
+import {FETCH_GROUPS, STORE_GROUPS,SHOW_GROUPS,UPDATE_GROUP} from '../managerConstants/managerConstants'
 
 const initialState = {
     response:{
@@ -8,7 +8,11 @@ const initialState = {
     loading:true,
     groups:[],
     showLoading:true,
-    showGroup:[]
+    showGroup:[],
+    updateResponse:{
+        status:false,
+        message:''
+    }
 }
 
 export default function(state=initialState,action){
@@ -24,6 +28,11 @@ export default function(state=initialState,action){
                     loading:false,
                     groups:action.payload
                 }
+                case UPDATE_GROUP:
+                    return {
+                        ...state,
+                        updateResponse:action.payload
+                    }
                 case SHOW_GROUPS:
                     return {
                         ...state,

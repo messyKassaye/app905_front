@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import LogoComponent from '../authentication/commons/LogoComponent'
 import withStyles from '@material-ui/core/styles/withStyles'
 import homeStyles from './styles/homeStyle'
+import LanguageSetter from './LanguageSetter';
 
 class HomeAppBar extends React.Component{
 
@@ -17,6 +18,7 @@ class HomeAppBar extends React.Component{
                         <LogoComponent variant={'h5'} margin={15} firstColor={'white'} secondColor={orange[500]}/>
                     </Typography>
                     <div className={classes.grow}></div>
+                     <LanguageSetter/>
                       <Button
                        component={Link}
                        to={'/login'}
